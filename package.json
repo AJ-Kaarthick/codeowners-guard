@@ -1,0 +1,110 @@
+{
+  "name": "codeowners-guard",
+  "displayName": "CODEOWNERS Guard",
+  "description": "Production-quality CODEOWNERS validation with filesystem-aware path casing checks and safe Quick Fixes.",
+  "version": "1.0.0",
+  "publisher": "ajkaarthick",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AJ-Kaarthick/codeowners-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AJ-Kaarthick/codeowners-guard/issues"
+  },
+  "homepage": "https://github.com/AJ-Kaarthick/codeowners-guard#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "codeowners",
+    "github",
+    "case-sensitive",
+    "path-casing",
+    "quick-fix"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:codeowners",
+    "workspaceContains:**/.github/CODEOWNERS",
+    "workspaceContains:**/CODEOWNERS",
+    "workspaceContains:**/docs/CODEOWNERS"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "codeowners",
+        "aliases": [
+          "CODEOWNERS",
+          "codeowners"
+        ],
+        "filenames": [
+          "CODEOWNERS"
+        ],
+        "filenamePatterns": [
+          "**/CODEOWNERS"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "codeowners-guard.scanCurrentFile",
+        "title": "CODEOWNERS Guard: Scan Current File"
+      },
+      {
+        "command": "codeowners-guard.scanWorkspace",
+        "title": "CODEOWNERS Guard: Scan Workspace"
+      },
+      {
+        "command": "codeowners-guard.fixAllInFile",
+        "title": "CODEOWNERS Guard: Fix All in Current File"
+      },
+      {
+        "command": "codeowners-guard.fixAllInWorkspace",
+        "title": "CODEOWNERS Guard: Fix All in Workspace"
+      }
+    ],
+    "configuration": {
+      "title": "CODEOWNERS Guard",
+      "properties": {
+        "codeownersGuard.exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/.git",
+            "**/node_modules",
+            "**/dist",
+            "**/build",
+            "**/coverage"
+          ],
+          "description": "Glob patterns to exclude from CODEOWNERS path resolution and workspace scanning."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "compile:test": "tsc -p ./tsconfig.test.json",
+    "typecheck": "tsc --noEmit && tsc -p ./tsconfig.test.json --noEmit",
+    "test": "npm run compile:test && mocha -r out/test/setup.js \"out/test/unit/**/*.test.js\"",
+    "package": "vsce package --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.17.10",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "esbuild": "^0.24.2",
+    "mocha": "^10.8.2",
+    "typescript": "^5.7.2"
+  }
+}
