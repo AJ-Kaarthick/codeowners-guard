@@ -2,8 +2,9 @@
   "name": "codeowners-guard",
   "displayName": "CODEOWNERS Guard",
   "description": "Production-quality CODEOWNERS validation with filesystem-aware path casing checks and safe Quick Fixes.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ajkaarthick",
+  "icon": "media/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",

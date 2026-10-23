@@ -2,6 +2,20 @@
 
 All notable changes to **CODEOWNERS Guard** will be documented in this file.
 
+## [1.0.1] - 2026-10-23
+
+### Documentation & Branding
+
+- **Marketplace Branding**:
+  - Added a distinctive, high-contrast extension icon featuring the CODEOWNERS document, code-ownership routing tree, and casing verification shield.
+- **Documentation Visuals**:
+  - Added illustrative visual previews to the README:
+    - Overview diagram illustrating the local vs remote case-sensitivity trap and filesystem-aware verification.
+    - Quick Fix workflow showing native in-editor diagnostics and token-only remediation via `Ctrl+.`.
+    - Bulk review preview showing multi-file coordinated WorkspaceEdit remediation with prevalidation safety.
+- **Package Manifest**:
+  - Configured extension icon metadata in `package.json`.
+
 ## [1.0.0] - 2026-10-10
 
 ### Initial Release
