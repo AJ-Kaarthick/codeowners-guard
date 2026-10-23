@@ -16,6 +16,9 @@ GitHub's code review assignment will silently fail to match changes in `src/comp
 
 **CODEOWNERS Guard** inspects the literal directory entries on your filesystem, detects discrepancies before you commit, and offers safe, scoped Quick Fixes directly inside VS Code.
 
+![CODEOWNERS Guard overview comparing silent path casing failures on GitHub with proactive local verification](media/overview.png)
+*Illustrative preview: How CODEOWNERS Guard detects case-sensitivity discrepancies on local filesystems before changes reach GitHub.*
+
 ---
 
 ## Key Features & Primary Workflow
@@ -37,6 +40,10 @@ When hovering or positioning your cursor on a path casing finding, pressing `Ctr
    - Edits only the pattern token range.
    - Preserves owner lists, whitespace, inline comments, and surrounding formatting.
    - Performs live prevalidation against document contents to reject stale ranges.
+
+   ![CODEOWNERS Guard Quick Fix workflow in VS Code showing native diagnostics and token-only replacement](media/quick-fix-preview.png)
+   *Illustrative preview: Native in-editor warning diagnostic and scoped Quick Fix options accessed via Ctrl+.*
+
 2. **Fix all N safe path-casing issues in this CODEOWNERS file**:
    - Shows a native review modal summarizing the fix count.
    - Prevalidates every edit before applying.
@@ -45,6 +52,9 @@ When hovering or positioning your cursor on a path casing finding, pressing `Ctr
    - Gathers safe casing fixes across all effective `CODEOWNERS` files across all workspace folders.
    - Shows a review summary with affected file paths and total fix counts.
    - All edits are prevalidated and applied as a coordinated WorkspaceEdit. If prevalidation fails or the user cancels, no edits are applied.
+
+   ![CODEOWNERS Guard bulk review modal showing multi-file coordinated WorkspaceEdit remediation](media/bulk-review-preview.png)
+   *Illustrative preview: Coordinated bulk review across multiple CODEOWNERS files with atomic WorkspaceEdit application and cancellation safety.*
 
 All fixes preserve standard VS Code undo (`Ctrl+Z`).
 
