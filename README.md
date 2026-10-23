@@ -54,7 +54,7 @@ When hovering or positioning your cursor on a path casing finding, pressing `Ctr
    - All edits are prevalidated and applied as a coordinated WorkspaceEdit. If prevalidation fails or the user cancels, no edits are applied.
 
    ![CODEOWNERS Guard bulk review modal showing multi-file coordinated WorkspaceEdit remediation](media/bulk-review-preview.png)
-   *Illustrative preview: Coordinated bulk review across multiple CODEOWNERS files with coordinated WorkspaceEdit application with prevalidation and cancellation safety.*
+   *Illustrative preview: Review and prevalidate safe casing corrections across multiple CODEOWNERS files before applying a coordinated WorkspaceEdit.*
 
 All fixes preserve standard VS Code undo (`Ctrl+Z`).
 
